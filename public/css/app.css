@@ -473,18 +473,29 @@ ul {
   text-transform: capitalize;
 }
 
-main#home .flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
+header {
+  text-align: center;
+  font-size: 25px;
+  padding: 30px 0;
 }
 
-main#home .flip-card:hover .flip-card-inner {
+main#home .container {
+  flex-wrap: wrap;
+}
+
+main#home .container .flip-card {
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;
+  margin: 10px 10px;
+  width: calc(100% / 5 - 20px);
+}
+
+main#home .container .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-main#home .flip-card .flip-card-inner {
+main#home .container .flip-card .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -494,7 +505,9 @@ main#home .flip-card .flip-card-inner {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-main#home .flip-card .flip-card-inner .flip-card-front {
+main#home .container .flip-card .flip-card-inner .flip-card-front {
+  flex-direction: column;
+  justify-content: center;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -504,7 +517,9 @@ main#home .flip-card .flip-card-inner .flip-card-front {
   color: black;
 }
 
-main#home .flip-card .flip-card-inner .flip-card-back {
+main#home .container .flip-card .flip-card-inner .flip-card-back {
+  flex-direction: column;
+  justify-content: space-around;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -513,5 +528,14 @@ main#home .flip-card .flip-card-inner .flip-card-back {
   background-color: #2980b9;
   color: white;
   transform: rotateY(180deg);
+}
+
+main#home .container .flip-card .flip-card-inner .flip-card-back span {
+  font-size: 16px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 0;
 }
 
